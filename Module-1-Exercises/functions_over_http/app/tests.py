@@ -45,3 +45,19 @@ class TestOrderTotal(SimpleTestCase):
     def test_order_total_4_3_2(self):
         response = self.client.get("/order-total/4/3/2")
         self.assertContains(response, "24.5")
+
+
+class TestHelloView(SimpleTestCase):
+    def test_hello_nate(self):
+        response = self.client.get("/Hello/nate/")
+        self.assertContains(response, "Hello nate")
+
+
+class TestAddView(SimpleTestCase):
+    def test_add_1_to_4(self):
+        response = self.client.get("/add/1/4/")
+        self.assertContains(response, 5)
+
+    def test_add_2_2(self):
+        response = self.client.get("/add/2/2/")
+        self.assertContains(response, 4)

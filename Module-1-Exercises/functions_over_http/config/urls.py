@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path
-from app.views import hello_view, roll_die_view, random_between_view, add_view, hey_view, age_in_view, order_total_view, near_hundred_view, string_splosion_view, cat_dog_view,lone_sum_view
+from app.views import hello_view, roll_die_view, random_between_view, add_view, hey_view, age_in_view, order_total_view
 
 # Request (client/browser/app/...) == work (server) ==> response 
 # Web_app (HttpRequest) --> HttpResponse
@@ -19,5 +19,5 @@ urlpatterns = [
     path("hey/<str:name>", hey_view),
     path("age-in/<int:Year>/<int:BirthYear>", age_in_view),
     path("order-total/<int:burg>/<int:fry>/<int:drinks>", order_total_view),
-    path("admin/", admin.site.urls),
+    path("admin/", admin.site.urls)
 ]
